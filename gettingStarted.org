@@ -1,0 +1,49 @@
+#+Title: Getting started with linux
+#+Author: Ben Heinze
+
+* Introduction
+
+Hey yall, I'm writing this document because I just finished dual booting my main computer Stelven with Ubuntu 24.04.3, and I have go through all the steps to make my computer personalized once again. There's no way in hell I'll remember this in the future, so I figured I'd write it down in org mode (which also took some setting up).
+
+Here is a list of things I was taught to install first when installing a fresh Linux machine:
+- nvmep2: Jordan's neovim configuration
+- direnv: Used to automatically setup environments (useful with Jordan's repositorys)
+- nerd font: This is necessary to get the correct icons for nvmep2 and the starship terminal.
+- starship terminal: a MUCH better terminal. It provides more info, its good with github, etc. Just get it.
+- emacs: I installed emacs so I can use org mode, which I am currently using to write this document. Check out ways to get vim keybinds on emacs. 
+- Awesome desktop: this is a keyboard-centric desktop for linux that lets you use xModmap to rebind your keyboard buttons. This is useful for rebinding caps lock to escape when you press it and control when you hold it down.
+- Xmodmap: lets you rebind keyboard inputs
+- zathura: pdf viewer. This in conjunction with org mode is helpful for writing documents, you can update the document and have it auto-refresh to zathuras pdf viewer.
+- vimium: This is an extension for a web browser so you can move around with vim commands
+- org mode: org-babel, org-roam, look into these. 
+- rofi: a cool application launcher
+I'm not going to write instructions for all of these, only the programs that need it.
+
+* nvmep2
+
+I forked this from Jordan Schupbach, so it is available to clone on my github.
+
+1. I like to create a folder called `git_repos` in my root folder.
+2. git clone the nvmep2 repo in `git_repos`
+3. Install nix via `curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install` or another method
+4. run `direnv allow` in the nvmep2 folder. I don't know if this is necessary, but it may fix problems before they arise.
+5. You can run the command `nix run "github:Ben-Heinze/nvmep2" --extra-experimental-features nix-command --extra-experimental-features flakes` to run the repo, but putting it as a command in bash is better.
+5. I create a function in my `~/.bashrc` file so I can call the command `neo` in the terminal to launch the IDE.
+   - The function is `neo(){ nix run "github:Ben-Heinze/nvmep2" --extra-experimental-features nix-command --extra-experimental-features flakes }`
+6. Now you can run `neo` in the terminal no matter where you are to pull up the IDE.
+
+* direnv
+
+1. sudo apt install direnv
+2. add `eval "$(direnv hook bash)"` to the bottom of your `.bashrc` file.
+
+* Awesome Desktop
+
+- Download awesome desktop, log out of ubuntu, and switch over to it.
+- I copied my `.Xmodmap` folder from my laptop
+- run `xmodmap ~/.Xmodmap` to run the new bindings
+The xmodmap function worked for a few of my keybinds with the exception of how pressing caps lock actives the escape keybind.
+- `sudo apt install xcape`
+-  add `awful.spawn.with_shell("xcape -e 'Control_L=Escape'")` to `~/.config/awesome/rc.lua`, then reload.
+
+I also copied my `~/.config/awesome/rc.lua` file from my laptop and put it in the same location. This allowed me to chang the text cursor speed by adding `awful.spawn.with_shell("xset r rate 200 50")` right about the `globalkeys = ...` function. 
