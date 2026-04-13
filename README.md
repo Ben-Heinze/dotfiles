@@ -12,11 +12,13 @@ This will add the configuration for emacs, xmodmap, ~/.config/awesome/rc.lua, wh
 
 5. To active the rebinded text cursor speed and caps lock config (hold for CTRL, press for ESC), you have to manually copy mawesome.desktop to xsessions: `sudo cp ~/dotfiles/mawsome.desktop /usr/share/xsessions/`. 
 
-6. Unless your user name is `ben`, you'll need to manually change the path inside mawesome.desktop's Exec from `Exec=/home/ben/scripts/launch-awesome` to `Exec=/home/USER_NAME_HERE/scripts/launch-awesome` by substituting `USER_NAME_HERE` to the user's login name.
+6. You may need to manually change the path inside mawesome.desktop's Exec: `Exec=/home/NAME/scripts/launch-awesome` by substituting `NAME` to the user's login name.
 
 7. Open the permissions to resetKeyboard to ensure these script files actually run: `chmod +x ~/scripts/launch-awesome ~/scripts/resetKeyboard`
 
 8. Finally, log out of the ubuntu desktop, and click the gear button in the bottom right after choosing your profile, but before logging in, then choose `mawesome` for the wm.
+
+Use `feh --bg-fill (or --bg-scale) ~/Downloads/wallpaper.png` to add a wallpaper. The rc.lua file has code that will maintain this wallpaper on reset.
 
 ## install.sh
 
