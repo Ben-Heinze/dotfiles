@@ -18,7 +18,7 @@ This will add the configuration for emacs, xmodmap, ~/.config/awesome/rc.lua, wh
 
 8. Finally, log out of the ubuntu desktop, and click the gear button in the bottom right after choosing your profile, but before logging in, then choose `mawesome` for the wm.
 
-Use `feh --bg-fill (or --bg-scale) ~/Downloads/wallpaper.png` to add a wallpaper. The rc.lua file has code that will maintain this wallpaper on reset.
+9. (Optional): Use `feh --bg-scale ~/dotfiles/wallpaper.png` (or --bg-fill) to add the basic wallpaper. The rc.lua file has code that will maintain this wallpaper on reset.
 
 ## install.sh
 
