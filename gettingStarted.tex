@@ -1,0 +1,103 @@
+% Created 2026-04-12 Sun 22:02
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Ben Heinze}
+\date{\today}
+\title{Getting started with linux}
+\hypersetup{
+ pdfauthor={Ben Heinze},
+ pdftitle={Getting started with linux},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+
+\section{First time Setup instructions}
+\label{sec:orgfa41d46}
+
+\textbf{\textbf{If you are starting from a completely fresh distro Before doing anything, look at the README.md and follow those instructions.}}
+
+\section{Introduction}
+\label{sec:org03157e4}
+
+Hey yall, I'm writing this document because I just finished dual booting my main computer Stelven with Ubuntu 24.04.3, and I have go through all the steps to make my computer personalized once again. There's no way in hell I'll remember this in the future, so I figured I'd write it down in org mode (which also took some setting up).
+
+Here is a list of things I was taught to install first when installing a fresh Linux machine:
+\begin{itemize}
+\item \textbf{\textbf{nvmep2}}: Jordan's neovim configuration
+\item \textbf{\textbf{direnv}}: Used to automatically setup environments (useful with Jordan's repositorys)
+\item \textbf{\textbf{ubuntu mono nerd font}}: This is necessary to get the correct icons for nvmep2 and the starship terminal.
+\item \textbf{\textbf{starship terminal}}: a MUCH better terminal. It provides more info, its good with github, etc. Just get it.
+\item \textbf{\textbf{emacs}}: I installed emacs so I can use org mode, which I am currently using to write this document. Check out ways to get vim keybinds on emacs.
+\item \textbf{\textbf{Awesome desktop}}: this is a keyboard-centric desktop for linux that lets you use xModmap to rebind your keyboard buttons. This is useful for rebinding caps lock to escape when you press it and control when you hold it down.
+\item \textbf{\textbf{Xmodmap}}: lets you rebind keyboard inputs
+\item \textbf{\textbf{zathura}}: pdf viewer. This in conjunction with org mode is helpful for writing documents, you can update the document and have it auto-refresh to zathuras pdf viewer.
+\item \textbf{\textbf{vimium}}: This is an extension for a web browser so you can move around with vim commands
+\item \textbf{\textbf{org mode}}: org-babel, org-roam, look into these.
+\item \textbf{\textbf{rofi}}: a cool application launcher
+\end{itemize}
+I'm not going to write instructions for all of these, only the programs that need it.
+
+
+
+
+
+\section{nvmep2}
+\label{sec:org569bd85}
+
+I forked this from Jordan Schupbach, so it is available to clone on my github.
+
+\begin{enumerate}
+\item I like to create a folder called `git\textsubscript{repos}` in my root folder.
+\item git clone the nvmep2 repo in `git\textsubscript{repos}`
+\item Install nix via `curl --proto '=https' --tlsv1.2 -sSf -L \url{https://install.determinate.systems/nix} | sh -s -- install` or another method
+\item run `direnv allow` in the nvmep2 folder. I don't know if this is necessary, but it may fix problems before they arise.
+\item You can run the command `nix run "github:Ben-Heinze/nvmep2" --extra-experimental-features nix-command --extra-experimental-features flakes` to run the repo, but putting it as a command in bash is better.
+\item I create a function in my `\textasciitilde{}/.bashrc` file so I can call the command `neo` in the terminal to launch the IDE.
+\begin{itemize}
+\item The function is `neo()\{ nix run "github:Ben-Heinze/nvmep2" --extra-experimental-features nix-command --extra-experimental-features flakes \}`
+\end{itemize}
+\item Now you can run `neo` in the terminal no matter where you are to pull up the IDE.
+\end{enumerate}
+
+\section{direnv}
+\label{sec:org318b5e0}
+
+\begin{enumerate}
+\item sudo apt install direnv
+\item add `eval "\$(direnv hook bash)"` to the bottom of your `.bashrc` file.
+\end{enumerate}
+
+\section{Awesome Desktop}
+\label{sec:orgff1d571}
+
+\begin{itemize}
+\item Download awesome desktop, log out of ubuntu, and switch over to it.
+\item I copied my `.Xmodmap` folder from my laptop
+\item run `xmodmap \textasciitilde{}/.Xmodmap` to run the new bindings
+\end{itemize}
+The xmodmap function worked for a few of my keybinds with the exception of how pressing caps lock actives the escape keybind.
+\begin{itemize}
+\item `sudo apt install xcape`
+\item add `awful.spawn.with\textsubscript{shell}("xcape -e 'Control\textsubscript{L}=Escape'")` to `\textasciitilde{}/.config/awesome/rc.lua`, then reload.
+\end{itemize}
+
+I also copied my `\textasciitilde{}/.config/awesome/rc.lua` file from my laptop and put it in the same location. This allowed me to chang the text cursor speed by adding `awful.spawn.with\textsubscript{shell}("xset r rate 200 50")` right about the `globalkeys = \ldots{}` function. 
+\end{document}

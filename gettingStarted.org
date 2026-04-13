@@ -1,23 +1,32 @@
 #+Title: Getting started with linux
 #+Author: Ben Heinze
 
+
+* First time Setup instructions
+
+**If you are starting from a completely fresh distro Before doing anything, look at the README.md and follow those instructions.**
+
 * Introduction
 
 Hey yall, I'm writing this document because I just finished dual booting my main computer Stelven with Ubuntu 24.04.3, and I have go through all the steps to make my computer personalized once again. There's no way in hell I'll remember this in the future, so I figured I'd write it down in org mode (which also took some setting up).
 
 Here is a list of things I was taught to install first when installing a fresh Linux machine:
-- nvmep2: Jordan's neovim configuration
-- direnv: Used to automatically setup environments (useful with Jordan's repositorys)
-- nerd font: This is necessary to get the correct icons for nvmep2 and the starship terminal.
-- starship terminal: a MUCH better terminal. It provides more info, its good with github, etc. Just get it.
-- emacs: I installed emacs so I can use org mode, which I am currently using to write this document. Check out ways to get vim keybinds on emacs. 
-- Awesome desktop: this is a keyboard-centric desktop for linux that lets you use xModmap to rebind your keyboard buttons. This is useful for rebinding caps lock to escape when you press it and control when you hold it down.
-- Xmodmap: lets you rebind keyboard inputs
-- zathura: pdf viewer. This in conjunction with org mode is helpful for writing documents, you can update the document and have it auto-refresh to zathuras pdf viewer.
-- vimium: This is an extension for a web browser so you can move around with vim commands
-- org mode: org-babel, org-roam, look into these. 
-- rofi: a cool application launcher
+- **nvmep2**: Jordan's neovim configuration
+- **direnv**: Used to automatically setup environments (useful with Jordan's repositorys)
+- **ubuntu mono nerd font**: This is necessary to get the correct icons for nvmep2 and the starship terminal.
+- **starship terminal**: a MUCH better terminal. It provides more info, its good with github, etc. Just get it.
+- **emacs**: I installed emacs so I can use org mode, which I am currently using to write this document. Check out ways to get vim keybinds on emacs. 
+- **Awesome desktop**: this is a keyboard-centric desktop for linux that lets you use xModmap to rebind your keyboard buttons. This is useful for rebinding caps lock to escape when you press it and control when you hold it down.
+- **Xmodmap**: lets you rebind keyboard inputs
+- **zathura**: pdf viewer. This in conjunction with org mode is helpful for writing documents, you can update the document and have it auto-refresh to zathuras pdf viewer.
+- **vimium**: This is an extension for a web browser so you can move around with vim commands
+- **org mode**: org-babel, org-roam, look into these. 
+- **rofi**: a cool application launcher
 I'm not going to write instructions for all of these, only the programs that need it.
+
+
+
+
 
 * nvmep2
 
