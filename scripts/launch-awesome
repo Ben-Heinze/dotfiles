@@ -1,0 +1,6 @@
+xset r rate 200 50
+if [ -f "~/.Xmodmap" ]; then
+  xmodmap ~/.Xmodmap
+fi
+xcape -e 'Control_L=Escape'
+exec awesome

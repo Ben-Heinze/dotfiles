@@ -1,0 +1,6 @@
+xset r rate 200 50
+if [ -f "~/.Xmodmap" ]; then
+  xmodmap -e "remove Lock = Caps_Lock"
+  xmodmap ~/.Xmodmap
+fi
+xcape -e 'Control_L=Escape'
