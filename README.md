@@ -3,7 +3,7 @@
 ## Instructions
 
 To get the setup on a fresh computer, 
-1. Clone this repo to home: `git clone ~/git@github.com:Ben-Heinze/dotfiles.git`
+1. Clone this repo to home: `git clone git@github.com:Ben-Heinze/dotfiles.git`
 2. install stow if necessary: `sudo apt install stow`
 3. Use `cd ~/dotfiles` to enter the repo files
 4. `stow */` will sync the contents of /dotfiles to the home directory.
