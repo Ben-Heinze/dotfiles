@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=mawesome
+Comment=A very highly configurable framework window manager
+Exec=/home/ben/scripts/launch-awesome
+Type=Application
+Terminal=false
+Icon=/usr/share/pixmaps/awesome.xpm
+Keywords=Window manager
