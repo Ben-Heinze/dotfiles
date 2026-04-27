@@ -20,7 +20,12 @@ This will add the configuration for emacs, xmodmap, ~/.config/awesome/rc.lua, wh
 
 9. (Optional): Use `feh --bg-scale ~/dotfiles/wallpaper.png` (or --bg-fill) to add the basic wallpaper. The rc.lua file has code that will maintain this wallpaper on reset.
 
-**Note: If the xcape text cursor speed or the caps-lock --> L_CTRL ever stops working, run `~/scripts/resetKeyboard`.**
+## Reset Keyboard
+
+- `bash ~/scripts/resetKeyboard`: If the xcape text cursor speed or the caps-lock --> L_CTRL ever stops working, run
+- `xmodmap ~/.Xmodmap`: Resets xmodmap kebinds
+- `resetKeyboard`: Resets both with a single terminal commmand.
+
 
 ## install.sh
 
