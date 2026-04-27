@@ -7,6 +7,13 @@ neo(){
 	       	--extra-experimental-features flakes \
 		"$@"
 }
+
+# Type `resetKeyboard` in terminal to rerun the xmodmap and resetKeyboard script. This reloads the keybinds
+resetKeyboard(){
+        xmodmap ~/.Xmodmap
+        bash ~/scripts/resetKeyboard
+}
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
